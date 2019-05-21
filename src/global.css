@@ -1,5 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import url(//db.onlinewebfonts.com/c/ca42b7ce0d708ee0817789585c449739?family=PeachesandCreamRegularW00);
 
 #___gatsby {
     font-family: 'Cinzel', serif;
+}
+
+.active, a:hover {
+    color: #e53e3e;
 }
