@@ -4,6 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
 
+@font-face {font-family: "PeachesandCreamRegularW00";
+    src: url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.eot");
+    src: url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.svg#PeachesandCreamRegularW00") format("svg");
+}
+
 #___gatsby {
     font-family: 'Cinzel', serif;
 }
