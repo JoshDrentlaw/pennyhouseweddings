@@ -23,14 +23,18 @@ const Main = styled.main`
 
 const footer = 'text-center p-4'
 
+
 const Layout = ({ children }) => {
+  const isClient = typeof window !== 'undefined';
   const safari = is.safari();
   let url;
-  switch (window.location.pathname) {
-    case '/':
-      url = (safari) ?
-        'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
-        'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+  if (isClient) {
+    switch (window.location.pathname) {
+      case '/':
+        url = (safari) ?
+          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
+          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+    }
   }
 
   return(
