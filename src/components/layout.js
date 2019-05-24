@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import is from 'is_js'
 
@@ -28,24 +28,28 @@ const Layout = ({ children }) => {
   const safari = is.safari();
   let url;
   
-  useEffect(() => {
-    if (isClient) {
-      switch (window.location.pathname) {
-        case '/':
+  if (isClient) {
+    switch (window.location.pathname) {
+      case '/':
+        url = (safari) ?
+          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
+          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+        break;
+      case '/contact/':
           url = (safari) ?
-            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
-            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.png' :
+            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.webp';
           break;
-        default:
-          url = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png';
-          break;
-      }
+      default:
+        url = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png';
+        break;
     }
-  });
+  }
 
   return(
     <div style={{
-      background: `black url(${url}) no-repeat fixed center`
+      background: `black no-repeat fixed center`,
+      backgroundImage: `url(${url})`
     }}>
       <Header />
       <Main className="lg:w-1/2 w-full">{children}</Main>

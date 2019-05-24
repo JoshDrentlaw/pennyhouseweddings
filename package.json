@@ -15,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.37",
     "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-source-cloudinary": "^0.1.8",
     "gatsby-source-filesystem": "^2.0.36",
     "gatsby-transformer-sharp": "^2.1.19",
     "is_js": "^0.9.0",
@@ -36,10 +37,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0",
+    "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve -H 0.0.0.0",
+    "serve": "gatsby serve",
     "prod": "npm run build && npm run serve"
   },
   "repository": {

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Penny House Weddings`,
-    description: ``,
+    description: `Get quality video of your wedding at a great price.`,
     author: `Josh Drentlaw`,
   },
   plugins: [
@@ -12,6 +12,15 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: 'josh-drentlaw-web-development',
+        apiKey: '834389172697799',
+        apiSecret: 'QmNJkvm0qWhwHQjYhTM_AFJLlqQ',
+        resourceType: 'image'
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
