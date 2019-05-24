@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import is from 'is_js'
 
@@ -27,18 +27,21 @@ const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
   const safari = is.safari();
   let url;
-  if (isClient) {
-    switch (window.location.pathname) {
-      case '/':
-        url = (safari) ?
-          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
-          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
-        break;
-      default:
-        url = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png';
-        break;
+  
+  useEffect(() => {
+    if (isClient) {
+      switch (window.location.pathname) {
+        case '/':
+          url = (safari) ?
+            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
+            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+          break;
+        default:
+          url = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png';
+          break;
+      }
     }
-  }
+  });
 
   return(
     <div style={{
