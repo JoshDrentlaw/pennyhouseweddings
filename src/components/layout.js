@@ -26,7 +26,9 @@ const footer = 'text-center p-4 bg-black text-white'
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
   const safari = is.safari();
-  let url;
+  let url = (safari) ?
+    'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
+    'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
   
   if (isClient) {
     switch (window.location.pathname) {
