@@ -15,13 +15,12 @@ import styled from 'styled-components'
 import Header from "./header"
 
 const Main = styled.main`
-  width: 50%;
   min-height: calc(100vh - 112px);
   margin: 0 auto;
   padding: 1rem;
 `
 
-const footer = 'text-center p-4'
+const footer = 'text-center p-4 bg-black text-white'
 
 
 const Layout = ({ children }) => {
@@ -34,15 +33,19 @@ const Layout = ({ children }) => {
         url = (safari) ?
           'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
           'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+        break;
+      default:
+        url = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png';
+        break;
     }
   }
 
   return(
     <div style={{
-      backgroundImage: `url(${url})`
+      background: `black url(${url}) no-repeat fixed center`
     }}>
       <Header />
-      <Main>{children}</Main>
+      <Main className="lg:w-1/2 w-full">{children}</Main>
       <footer className={footer}>
         © {new Date().getFullYear()}, Built with
         {` `}

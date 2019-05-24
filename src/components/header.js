@@ -12,7 +12,7 @@ const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg
 const Header = () => (
   <Nav>
     <div className={wrapper}>
-      <span className="text-red-600">[PENNY HOUSE]</span>
+      <span className="text-red-600 md:text-base text-lg">[PENNY HOUSE]</span>
       <div>
         <Link className="pr-2" activeClassName="active" to='/'>Home</Link>
         <Link className="pl-2" activeClassName="active" to='/contact/'>Contact</Link>
