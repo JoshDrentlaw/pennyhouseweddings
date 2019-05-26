@@ -8,14 +8,15 @@
     "autoprefixer": "^9.5.1",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.5.5",
-    "gatsby-image": "^2.1.0",
+    "gatsby-image": "^2.1.1",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-postcss": "^2.0.7",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-sharp": "^2.0.37",
     "gatsby-plugin-styled-components": "^3.0.7",
-    "gatsby-source-cloudinary": "^0.1.8",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.0.36",
     "gatsby-transformer-sharp": "^2.1.19",
     "is_js": "^0.9.0",
@@ -41,7 +42,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "prod": "npm run build && npm run serve"
+    "prod": "npm run build && npm run serve",
+    "netlify": "netlify dev"
   },
   "repository": {
     "type": "git",

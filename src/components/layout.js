@@ -7,12 +7,19 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import Img from 'gatsby-image'
+
 import is from 'is_js'
 
 import '../global.css'
 import styled from 'styled-components'
 
 import Header from "./header"
+
+import weddingPng from '../images/wedding-bg.png';
+import weddingWebp from '../images/wedding-bg.webp';
+import receptionPng from '../images/reception-bg.png';
+import receptionWebp from '../images/reception-bg.webp';
 
 const Main = styled.main`
   min-height: calc(100vh - 112px);
@@ -26,33 +33,28 @@ const footer = 'text-center p-4 bg-black text-white'
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
   const safari = is.safari();
-  let url = (safari) ?
-    'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
-    'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+  let url = (safari) ? weddingPng : weddingWebp;
   
   if (isClient) {
     switch (window.location.pathname) {
       case '/':
-        url = (safari) ?
-          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png' :
-          'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.webp';
+        url = (safari) ? weddingPng : weddingWebp;
         break;
       case '/contact/':
-          url = (safari) ?
-            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.png' :
-            'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.webp';
+          url = (safari) ? receptionPng : receptionWebp;
           break;
       default:
-        url = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.png';
+        url = weddingPng;
         break;
     }
   }
 
   return(
-    <div style={{
-      background: `black no-repeat fixed center`,
-      backgroundImage: `url(${url})`
-    }}>
+    <div
+      style={{
+        background: `black url(${url}) no-repeat fixed center`
+      }}
+    >
       <Header />
       <Main className="lg:w-1/2 w-full">{children}</Main>
       <footer className={footer}>

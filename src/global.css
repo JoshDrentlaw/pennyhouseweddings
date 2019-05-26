@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap'); */
 
 @font-face {font-family: "PeachesandCreamRegularW00";
     src: url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.eot");
@@ -14,7 +14,7 @@
 }
 
 #___gatsby {
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
 }
 
 .active, a:hover {
