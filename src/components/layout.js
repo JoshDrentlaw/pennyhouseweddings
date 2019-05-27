@@ -7,14 +7,13 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import Img from 'gatsby-image'
 
 import is from 'is_js'
 
 import '../global.css'
 import styled from 'styled-components'
 
-import Header from "./header"
+import Header, { Socials } from "./header"
 
 import weddingPng from '../images/wedding-bg.png';
 import weddingWebp from '../images/wedding-bg.webp';
@@ -31,7 +30,7 @@ const Background = styled.div.attrs(({ url }) => ({
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: black url(${props => props.url}) no-repeat fixed center;
+    background: black url(${props => props.url}) no-repeat center top;
     filter: brightness(70%);
   }
 `
@@ -42,7 +41,7 @@ const Main = styled.main`
   padding: 1rem;
 `
 
-const footer = 'text-center p-4 bg-black text-white'
+const footer = 'text-center p-4 bg-black text-grey-600'
 
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
@@ -69,9 +68,12 @@ const Layout = ({ children }) => {
         <Header />
         <Main className="lg:w-1/2 w-full">{children}</Main>
         <footer className={footer}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <div>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </div>
+          <Socials />
         </footer>
       </div>
     </Background>

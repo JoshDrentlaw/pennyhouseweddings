@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const heading = 'lg:text-7xl lg:h-large h-small text-3xl inline-flex flex-col justify-between items-center lg:mt-16 leading-none'
+const heading = 'lg:text-7xl lg:h-large h-small text-5xl inline-flex flex-col justify-between items-center lg:mt-16 leading-none'
 
 const IndexPage = () => (
   <Layout>

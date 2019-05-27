@@ -17,7 +17,7 @@
     font-family: "Cinzel", serif;
 }
 
-.active {
+.active, .active:hover {
     color: #e53e3e;
 }
 
