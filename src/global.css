@@ -15,6 +15,7 @@
 
 #___gatsby {
     font-family: "Cinzel", serif;
+    overflow: hidden;
 }
 
 .active, .active:hover {

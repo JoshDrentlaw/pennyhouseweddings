@@ -41,7 +41,7 @@ const Main = styled.main`
   padding: 1rem;
 `
 
-const footer = 'text-center p-4 bg-black text-grey-600'
+const footer = 'text-center p-4 bg-black text-lightgrey'
 
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
@@ -68,12 +68,15 @@ const Layout = ({ children }) => {
         <Header />
         <Main className="lg:w-1/2 w-full">{children}</Main>
         <footer className={footer}>
-          <div>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <div className="w-1/2 mx-auto flex justify-between">
+            <div>
+              © {new Date().getFullYear()}, Built with
+              {` `}
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </div>
+            <Socials />
           </div>
-          <Socials />
+          
         </footer>
       </div>
     </Background>

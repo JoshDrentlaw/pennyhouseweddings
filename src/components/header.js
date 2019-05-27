@@ -13,21 +13,41 @@ const Nav = styled.nav`
 `
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  grid-template-areas: 'brand links';
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 'brand links';
+  }
 `
 
-const Links = styled.div.attrs(({ visibility }) => ({
-  visibility: visibility
+const Links = styled.div.attrs(({ open }) => ({
+  visibility: open ? 'visible' : 'hidden',
+  transform: open ? `translateX(0%)` : `translateX(100%)`,
 }))`
   grid-area: links;
-  visibility: ${props => props.visibility};
+  position: relative;
+
+  /* Medium devices (tablets, less than 992px) */
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+    width: 20%; height: 100vh;
+    padding: 1rem;
+    padding-top: 4rem;
+    position: absolute;
+    visibility: ${props => props.visibility};
+    top: 0; right: 0;
+    transform: ${props => props.transform};
+    transition: all 200ms ease-in;
+  }
 `
 
 const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg:w-1/2';
 
 const hamburger = "flex items-center px-3 py-2 border rounded text-white border-white";
+
+const links =
+  `text-white flex flex-col justify-start items-center bg-transblack z-10
+  lg:bg-transparent lg:flex-row lg:justify-between lg:visible`;
 
 const HamburgerButton = (props) => {
   const toggle = () => {
@@ -35,7 +55,7 @@ const HamburgerButton = (props) => {
   }
 
   return (
-    <div className="block ml-auto lg:hidden" style={{ gridArea: 'links' }}>
+    <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
       <button className={hamburger} onClick={toggle}>
         <Hamburger className="fill-current h-3 w-3" />
       </button>
@@ -64,14 +84,14 @@ const Header = () => {
     <Nav>
       <Wrapper className={wrapper}>
         <span className="text-red-600 md:text-base text-lg whitespace-no-wrap" style={{ gridArea: 'brand' }}>[PENNY HOUSE]</span>
-        <HamburgerButton toggle={setOpen} state={open} />
-        <Links visibility={(open ? 'visible' : 'hidden')} className="text-white flex flex-col justify-between items-center lg:transparent lg:flex-row lg:visible">
-          <div style={{ background: `rgba(16,16,16,0.4)` }}>
+        <Links open={open} className={links}>
+          <div>
             <Link className="block lg:inline lg:pr-2" activeClassName="active" to='/'>Home</Link>
             <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
           </div>
           <Socials />
         </Links>
+        <HamburgerButton toggle={setOpen} state={open} />
       </Wrapper>
     </Nav>
   )
