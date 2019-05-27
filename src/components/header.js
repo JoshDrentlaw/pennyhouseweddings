@@ -46,7 +46,7 @@ const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg
 const hamburger = "flex items-center px-3 py-2 border rounded text-white border-white";
 
 const links =
-  `text-white flex flex-col justify-start items-center bg-transblack z-10
+  `text-white flex flex-col justify-start items-start bg-transblack z-10
   lg:bg-transparent lg:flex-row lg:justify-between lg:visible`;
 
 const HamburgerButton = (props) => {
@@ -64,7 +64,7 @@ const HamburgerButton = (props) => {
 }
 
 export const Socials = () => (
-  <div>
+  <div className="pl-px2">
     <button className="text-white mr-4">
       <Instagram className="fill-current w-4 h-4" />
     </button>
@@ -85,7 +85,7 @@ const Header = () => {
       <Wrapper className={wrapper}>
         <span className="text-red-600 md:text-base text-lg whitespace-no-wrap" style={{ gridArea: 'brand' }}>[PENNY HOUSE]</span>
         <Links open={open} className={links}>
-          <div>
+          <div className="lg:border-none border-b-2 border-white">
             <Link className="block lg:inline lg:pr-2" activeClassName="active" to='/'>Home</Link>
             <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
           </div>

@@ -69,11 +69,7 @@ const Layout = ({ children }) => {
         <Main className="lg:w-1/2 w-full">{children}</Main>
         <footer className={footer}>
           <div className="lg:w-1/2 mx-auto flex justify-between">
-            <div>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </div>
+            <div className="text-sm">© {new Date().getFullYear()} Penny House Weddings</div>
             <Socials />
           </div>
           
