@@ -17,6 +17,11 @@
     font-family: "Cinzel", serif;
 }
 
-.active, a:hover {
+.active {
     color: #e53e3e;
+}
+
+a:hover {
+    color: #cacaca;
+    transition: color 200ms ease-in-out;
 }

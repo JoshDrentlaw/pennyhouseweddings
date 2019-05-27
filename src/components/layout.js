@@ -21,6 +21,21 @@ import weddingWebp from '../images/wedding-bg.webp';
 import receptionPng from '../images/reception-bg.png';
 import receptionWebp from '../images/reception-bg.webp';
 
+const Background = styled.div.attrs(({ url }) => ({
+  url: url
+}))`
+  position: relative;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: black url(${props => props.url}) no-repeat fixed center;
+    filter: brightness(70%);
+  }
+`
+
 const Main = styled.main`
   min-height: calc(100vh - 112px);
   margin: 0 auto;
@@ -28,7 +43,6 @@ const Main = styled.main`
 `
 
 const footer = 'text-center p-4 bg-black text-white'
-
 
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
@@ -50,19 +64,17 @@ const Layout = ({ children }) => {
   }
 
   return(
-    <div
-      style={{
-        background: `black url(${url}) no-repeat fixed center`
-      }}
-    >
-      <Header />
-      <Main className="lg:w-1/2 w-full">{children}</Main>
-      <footer className={footer}>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </div>
+    <Background url={url}>
+      <div style={{ position: 'relative' }}>
+        <Header />
+        <Main className="lg:w-1/2 w-full">{children}</Main>
+        <footer className={footer}>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </div>
+    </Background>
   )
 }
 
