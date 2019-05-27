@@ -68,7 +68,7 @@ const Layout = ({ children }) => {
         <Header />
         <Main className="lg:w-1/2 w-full">{children}</Main>
         <footer className={footer}>
-          <div className="w-1/2 mx-auto flex justify-between">
+          <div className="lg:w-1/2 mx-auto flex justify-between">
             <div>
               © {new Date().getFullYear()}, Built with
               {` `}

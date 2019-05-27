@@ -30,7 +30,7 @@ const Links = styled.div.attrs(({ open }) => ({
   /* Medium devices (tablets, less than 992px) */
   @media (max-width: 1024px) {
     font-size: 1.5rem;
-    width: 20%; height: 100vh;
+    width: 40vw; height: 100vh;
     padding: 1rem;
     padding-top: 4rem;
     position: absolute;
