@@ -15,9 +15,9 @@ import styled from 'styled-components'
 
 import Header, { Socials } from "./header"
 
-import weddingPng from '../images/wedding-bg.png';
+//import weddingJpeg from '../images/wedding-bg.jp2';
 import weddingWebp from '../images/wedding-bg.webp';
-import receptionPng from '../images/reception-bg.png';
+//import receptionJpeg from '../images/reception-bg.jp2';
 import receptionWebp from '../images/reception-bg.webp';
 
 const Background = styled.div.attrs(({ url }) => ({
@@ -46,18 +46,18 @@ const footer = 'text-center p-4 bg-black text-lightgrey'
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
   const safari = is.safari();
-  let url = (safari) ? weddingPng : weddingWebp;
+  let url = (safari) ? weddingJpeg : weddingWebp;
   
   if (isClient) {
     switch (window.location.pathname) {
       case '/':
-        url = (safari) ? weddingPng : weddingWebp;
+        url = (safari) ? weddingJpeg : weddingWebp;
         break;
       case '/contact/':
-          url = (safari) ? receptionPng : receptionWebp;
+          url = (safari) ? receptionJpeg : receptionWebp;
           break;
       default:
-        url = weddingPng;
+        url = weddingJpeg;
         break;
     }
   }

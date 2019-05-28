@@ -9,10 +9,12 @@ import Vimeo from "../images/vimeo.inline.svg"
 import Facebook from '../images/facebook.inline.svg'
 
 const Nav = styled.nav`
+  position: sticky;
   background-color: rgba(0, 0, 0, 0);
 `
 
 const Wrapper = styled.div`
+  position: sticky;
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 40% 60%;
