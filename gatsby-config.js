@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Penny House Weddings`,
@@ -45,6 +49,14 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/
         }
+      }
+    },
+    {
+      resolve: 'gatsby-source-vimeo',
+      options: {
+        clientID: process.env.VIMEO_ID,
+        clientSecret: process.env.VIMEO_SECRET,
+        userID: process.env.VIMEO_USER
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

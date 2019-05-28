@@ -30,7 +30,7 @@ const Background = styled.div.attrs(({ url }) => ({
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: black url(${props => props.url}) no-repeat center top;
+    background: black url(${props => props.url}) no-repeat fixed top;
     filter: brightness(70%);
   }
 `
@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
   return(
     <Background url={url}>
       <div style={{ position: 'relative' }}>
-        <Header />
+        <Header className="sticky" />
         <Main className="lg:w-1/2 w-full">{children}</Main>
         <footer className={footer}>
           <div className="lg:w-1/2 mx-auto flex justify-between">
