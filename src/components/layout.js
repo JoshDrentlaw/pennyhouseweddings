@@ -46,18 +46,18 @@ const footer = 'text-center p-4 bg-black text-lightgrey'
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
   const safari = is.safari();
-  let url = (safari) ? weddingJpeg : weddingWebp;
+  let url = (safari) ? 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.jp2' : weddingWebp;
   
   if (isClient) {
     switch (window.location.pathname) {
       case '/':
-        url = (safari) ? weddingJpeg : weddingWebp;
+        url = (safari) ? 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.jp2' : weddingWebp;
         break;
       case '/contact/':
-          url = (safari) ? receptionJpeg : receptionWebp;
+          url = (safari) ? 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.jp2' : receptionWebp;
           break;
       default:
-        url = weddingJpeg;
+        url = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.jp2';
         break;
     }
   }
