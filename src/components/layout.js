@@ -30,7 +30,11 @@ const Background = styled.div.attrs(({ url }) => ({
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: black url(${props => props.url}) no-repeat fixed top;
+    background-color: black;
+    background-image: url(${props => props.url});
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
     filter: brightness(70%);
   }
 `
