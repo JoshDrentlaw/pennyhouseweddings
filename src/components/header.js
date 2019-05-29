@@ -14,7 +14,6 @@ const Nav = styled.nav`
 `
 
 const Wrapper = styled.div`
-  position: sticky;
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 40% 60%;

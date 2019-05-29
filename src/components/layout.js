@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
   return(
     <Background url={url}>
       <div style={{ position: 'relative' }}>
-        <Header className="sticky" />
+        <Header />
         <Main className="lg:w-1/2 w-full">{children}</Main>
         <footer className={footer}>
           <div className="lg:w-1/2 mx-auto flex justify-between">
