@@ -17,8 +17,8 @@ import Header, { Socials } from "./header"
 
 import weddingWebp from '../images/wedding-bg.webp';
 import receptionWebp from '../images/reception-bg.webp';
-const weddingJP2 = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.jp2';
-const receptionJP2 = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.jp2';
+const weddingJP2 = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.jpg';
+const receptionJP2 = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.jpg';
 
 
 const Background = styled.div.attrs(({ url }) => ({
@@ -36,6 +36,7 @@ const Background = styled.div.attrs(({ url }) => ({
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: top;
+    background-size: auto 100vh;
     filter: brightness(70%);
   }
 `
@@ -69,9 +70,9 @@ const Layout = ({ children }) => {
 
   return(
     <Background url={url}>
-      <div style={{ position: 'relative' }}>
+      <div className="relative h-auto">
         <Header />
-        <Main className="lg:w-1/2 w-full">{children}</Main>
+        <Main className="lg:w-1/2 w-full relative">{children}</Main>
         <footer className={footer}>
           <div className="lg:w-1/2 mx-auto flex justify-between">
             <div className="text-sm">© {new Date().getFullYear()} Penny House Weddings</div>

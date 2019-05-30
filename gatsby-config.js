@@ -35,11 +35,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        /* typekit: {
-          id: 'xxxxxx'
-        }, */
         google: {
           families: ['Cinzel']
+        },
+        custom: {
+          families: ['PeachesandCreamRegularW00'],
+          urls: ['//db.onlinewebfonts.com/c/ca42b7ce0d708ee0817789585c449739?family=PeachesandCreamRegularW00']
         }
       }
     },

@@ -42,13 +42,7 @@ const Links = styled.div.attrs(({ open }) => ({
   }
 `
 
-const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg:w-1/2';
-
 const hamburger = "flex items-center px-3 py-2 border rounded text-white border-white";
-
-const links =
-  `text-white flex flex-col justify-start items-start bg-transblack z-10
-  lg:bg-transparent lg:flex-row lg:justify-between lg:visible`;
 
 const HamburgerButton = (props) => {
   const toggle = () => {
@@ -77,6 +71,12 @@ export const Socials = () => (
     </button>
   </div>
 )
+
+const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg:w-1/2';
+
+const links =
+  `text-white flex flex-col justify-start items-start bg-transblack z-10
+  lg:bg-transparent lg:flex-row lg:justify-between lg:visible`;
 
 const Header = () => {
   const [open, setOpen] = useState(false);
