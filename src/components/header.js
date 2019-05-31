@@ -8,11 +8,6 @@ import Instagram from '../images/instagram.inline.svg'
 import Vimeo from "../images/vimeo.inline.svg"
 import Facebook from '../images/facebook.inline.svg'
 
-const Nav = styled.nav`
-  position: sticky;
-  background-color: rgba(0, 0, 0, 0);
-`
-
 const Wrapper = styled.div`
   @media (min-width: 1024px) {
     display: grid;
@@ -82,7 +77,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return(
-    <Nav>
+    <nav className="fixed lg:relative w-full z-50">
       <Wrapper className={wrapper}>
         <span className="text-red-600 md:text-base text-lg whitespace-no-wrap" style={{ gridArea: 'brand' }}>[PENNY HOUSE]</span>
         <Links open={open} className={links}>
@@ -94,7 +89,7 @@ const Header = () => {
         </Links>
         <HamburgerButton toggle={setOpen} state={open} />
       </Wrapper>
-    </Nav>
+    </nav>
   )
 }
 

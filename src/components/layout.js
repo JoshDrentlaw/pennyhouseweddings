@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
 
   return(
     <Background url={url}>
-      <div className="relative h-auto">
+      <div className="relative h-auto bg-scroll">
         <Header />
         <Main className="lg:w-1/2 w-full relative">{children}</Main>
         <footer className={footer}>
