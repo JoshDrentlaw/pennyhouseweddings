@@ -73,7 +73,7 @@ const links =
   `text-white flex flex-col justify-start items-start bg-transblack z-10
   lg:bg-transparent lg:flex-row lg:justify-between lg:visible`;
 
-const Header = () => {
+const Header = (props) => {
   const [open, setOpen] = useState(false);
 
   return(

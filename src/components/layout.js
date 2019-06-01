@@ -17,8 +17,8 @@ import Header, { Socials } from "./header"
 
 import weddingWebp from '../images/wedding-bg.webp';
 import receptionWebp from '../images/reception-bg.webp';
-const weddingJP2 = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558506290/pennyhouseweddings/wedding-bg.jpg';
-const receptionJP2 = 'https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1558707006/pennyhouseweddings/reseption-bg.jpg';
+import weddingJpg from '../images/wedding-bg.jpg';
+import receptionJpg from '../images/reception-bg.jpg';
 
 
 const Background = styled.div.attrs(({ url }) => ({
@@ -42,7 +42,7 @@ const Background = styled.div.attrs(({ url }) => ({
 `
 
 const Main = styled.main`
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 56px);
   margin: 0 auto;
   padding: 1rem;
 `
@@ -52,18 +52,18 @@ const footer = 'text-center p-4 bg-black text-lightgrey'
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
   const safari = is.safari();
-  let url = (safari) ? weddingJP2 : weddingWebp;
+  let url = (safari) ? weddingJpg : weddingWebp;
   
   if (isClient) {
     switch (window.location.pathname) {
       case '/':
-        url = (safari) ? weddingJP2 : weddingWebp;
+        url = (safari) ? weddingJpg : weddingWebp;
         break;
       case '/contact/':
-          url = (safari) ? receptionJP2 : receptionWebp;
+          url = (safari) ? receptionJpg : receptionWebp;
           break;
       default:
-        url = weddingJP2;
+        url = weddingJpg;
         break;
     }
   }

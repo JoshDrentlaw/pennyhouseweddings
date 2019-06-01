@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Videos from "../components/videos"
 
-const heading = 'lg:text-7xl lg:h-large h-auto mb-12 text-5xl inline-flex flex-col justify-between items-center lg:mt-16 leading-none'
+const heading = 'lg:text-7xl lg:h-large h-auto my-12 text-5xl inline-flex flex-col justify-between items-center lg:mt-16 leading-none'
 
 const IndexPage = () => (
   <Layout>
