@@ -35,19 +35,34 @@ const Background = styled.div.attrs(({ url }) => ({
     background-image: url(${props => props.url});
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: top;
-    background-size: auto 100vh;
+    background-position: center top;
+    background-size: 100% 100vh;
     filter: brightness(70%);
+
+    @media (max-width: 1024px) {
+      background-size: auto 100vh;
+    }
   }
 `
 
 const Main = styled.main`
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - 112px);
   margin: 0 auto;
   padding: 1rem;
+
+  @media (max-width: 1024px) {
+    max-height: calc(100vh - 112px);
+  }
 `
 
-const footer = 'text-center p-4 bg-black text-lightgrey'
+const Footer = () => (
+  <footer className="w-full text-center p-4 bg-black text-lightgrey z-50 fixed bottom-0 lg:relative lg:bottom-auto">
+    <div className="lg:w-1/2 mx-auto flex justify-between">
+      <div className="text-sm">© {new Date().getFullYear()} Penny House Weddings</div>
+      <Socials />
+    </div>
+  </footer>
+)
 
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
@@ -70,16 +85,10 @@ const Layout = ({ children }) => {
 
   return(
     <Background url={url}>
-      <div className="relative h-auto bg-scroll">
+      <div className="relative">
         <Header />
-        <Main className="lg:w-1/2 w-full relative">{children}</Main>
-        <footer className={footer}>
-          <div className="lg:w-1/2 mx-auto flex justify-between">
-            <div className="text-sm">© {new Date().getFullYear()} Penny House Weddings</div>
-            <Socials />
-          </div>
-          
-        </footer>
+        <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
+        <Footer />
       </div>
     </Background>
   )

@@ -5,10 +5,10 @@ import ReactHtmlParser from 'react-html-parser'
 import styled from 'styled-components'
 
 const VideoItem = styled.li`
-    width: calc(100% - 2rem);
+    width: calc(100% - 1rem);
     height: 0;
     padding-top: 56.25%;
-    margin: 0 auto 1rem;
+    margin: 0.5rem auto 0.5rem;
     position: relative;
     overflow: hidden;
 

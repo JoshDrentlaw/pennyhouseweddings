@@ -9,6 +9,7 @@ const heading = 'lg:text-7xl lg:h-large h-auto my-12 text-5xl inline-flex flex-c
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <p className="text-red-600 lg:hidden inline">[PENNY HOUSE]</p>
     <h1 className={heading}><span>PENNY</span><span>HOUSE</span><span className="font-sans lg:text-5xl text-red-600">[Weddings]</span></h1>
     <Videos />
   </Layout>

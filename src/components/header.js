@@ -37,7 +37,7 @@ const Links = styled.div.attrs(({ open }) => ({
   }
 `
 
-const hamburger = "flex items-center px-3 py-2 border rounded text-white border-white";
+const hamburger = "flex items-center px-3 py-2 text-black bg-white rounded border border-black";
 
 const HamburgerButton = (props) => {
   const toggle = () => {
@@ -79,10 +79,10 @@ const Header = (props) => {
   return(
     <nav className="fixed lg:relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span className="text-red-600 md:text-base text-lg whitespace-no-wrap" style={{ gridArea: 'brand' }}>[PENNY HOUSE]</span>
+        <span className="text-red-600 md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[PENNY HOUSE]</span>
         <Links open={open} className={links}>
-          <div className="lg:border-none border-b-2 border-white">
-            <Link className="block lg:inline lg:pr-2" activeClassName="active" to='/'>Home</Link>
+          <div className="mb-4">
+            <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>
             <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
           </div>
           <Socials />
