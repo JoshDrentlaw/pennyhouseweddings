@@ -71,7 +71,7 @@ const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg
 
 const links =
   `text-white flex flex-col justify-start items-start bg-transblack z-10
-  lg:bg-transparent lg:flex-row lg:justify-between lg:visible`;
+  lg:bg-transparent lg:flex-row lg:justify-between lg:items-center lg:visible`;
 
 const Header = (props) => {
   const [open, setOpen] = useState(false);
@@ -79,9 +79,9 @@ const Header = (props) => {
   return(
     <nav className="fixed lg:relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span className="text-red-600 md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[PENNY HOUSE]</span>
+        <span className="text-red-600 font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[Penny House Weddings]</span>
         <Links open={open} className={links}>
-          <div className="mb-4">
+          <div className="">
             <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>
             <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
           </div>

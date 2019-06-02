@@ -26,3 +26,7 @@ a:hover {
     color: #cacaca;
     transition: color 200ms ease-in-out;
 }
+
+textarea::placeholder {
+    opacity: 1;
+}

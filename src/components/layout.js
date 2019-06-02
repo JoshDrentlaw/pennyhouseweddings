@@ -46,12 +46,12 @@ const Background = styled.div.attrs(({ url }) => ({
 `
 
 const Main = styled.main`
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 56px);
   margin: 0 auto;
   padding: 1rem;
 
   @media (max-width: 1024px) {
-    max-height: calc(100vh - 112px);
+    max-height: calc(100vh - 56px);
   }
 `
 
