@@ -57,8 +57,8 @@ const ContactPage = () => (
         <SEO title="Contact" />
         <p className="text-red-600 font-sans lg:hidden block">[Penny House Weddings]</p>
         <h1 className="mt-6 text-white text-center text-5xl lg:text-7xl">Contact</h1>
-        <form name="Contact" method="POST" netlify netlify-honeypot="bot-field" className="w-full md:w-1/2 lg:w-3/4 xl:w-3/5 mx-auto mb-6">
-            <input type="hidden" name="form-name" value="Contact"></input>
+        <form name="contact" method="POST" data-netlify="true" className="w-full md:w-1/2 lg:w-3/4 xl:w-3/5 mx-auto mb-6">
+            <input type="hidden" name="bot-field" />
             <Group>
                 <FormInput
                     name="First Name"
