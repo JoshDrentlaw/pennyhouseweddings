@@ -13,6 +13,10 @@
     url("//db.onlinewebfonts.com/t/ca42b7ce0d708ee0817789585c449739.svg#PeachesandCreamRegularW00") format("svg");
 } */
 
+html {
+    scroll-behavior: smooth;
+}
+
 #___gatsby {
     font-family: "Cinzel", serif;
     overflow: hidden;
