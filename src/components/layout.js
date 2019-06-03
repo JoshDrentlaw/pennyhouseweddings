@@ -49,7 +49,7 @@ const Main = styled.main`
 const Footer = () => (
   <footer className="w-full text-center p-4 bg-black text-lightgrey z-50 fixed bottom-0 lg:relative lg:bottom-auto">
     <div className="lg:w-1/2 mx-auto flex justify-between">
-      <div className="text-sm">© {new Date().getFullYear()} Penny House Weddings</div>
+      <div className="text-sm w-1/2">© {new Date().getFullYear()} Penny House Weddings</div>
       <Socials />
     </div>
   </footer>
@@ -77,6 +77,7 @@ const Layout = ({ children }) => {
   return(
     <Background url={url} safari={safari}>
       <div className="relative">
+        <div id="top" />
         <Header />
         <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
         <Footer />

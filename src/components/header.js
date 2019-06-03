@@ -54,16 +54,16 @@ const HamburgerButton = (props) => {
 }
 
 export const Socials = () => (
-  <div className="pl-px2">
-    <button className="text-white mr-4">
-      <Instagram className="fill-current w-4 h-4" />
-    </button>
-    <button className="text-white mr-4">
-      <Vimeo className="fill-current w-4 h-4" />
-    </button>
-    <button className="text-white">
-      <Facebook className="fill-current w-4 h-4" />
-    </button>
+  <div className="pl-px2 w-1/2">
+    <a href="https://www.instagram.com/pennyhouseweddings/" className="text-white mr-4 inline">
+      <Instagram className="fill-current w-4 h-4 m-0" />
+    </a>
+    <a href="https://vimeo.com/pennyhouseweddings" className="text-white mr-4 inline">
+      <Vimeo className="fill-current w-4 h-4 m-0" />
+    </a>
+    <a href="https://www.facebook.com/pennyhouseweddings/?ref=py_c" className="text-white inline">
+      <Facebook className="fill-current w-4 h-4 m-0" />
+    </a>
   </div>
 )
 
@@ -79,7 +79,7 @@ const Header = (props) => {
   return(
     <nav className="fixed lg:relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span id="company" className="text-red-600 font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[Penny House Weddings]</span>
+        <span className="text-red-600 font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[Penny House Weddings]</span>
         <Links open={open} className={links}>
           <div className="">
             <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>
