@@ -152,7 +152,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'PeachesandCreamRegularW00',
+        'Peaches and Cream',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',

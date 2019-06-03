@@ -12,8 +12,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
 
-        <link href="//db.onlinewebfonts.com/c/ca42b7ce0d708ee0817789585c449739?family=PeachesandCreamRegularW00" rel="stylesheet" type="text/css"/>
-
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

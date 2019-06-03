@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,10 +11,10 @@ const fab = "rounded-full border border-black bg-white text-black hover:text-bla
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <p className="text-red-600 font-sans lg:hidden block">[Penny House Weddings]</p>
-    <h1 className={heading} id="company"><span>PENNY</span><span>HOUSE</span><span className="font-sans lg:text-5xl text-red-600">[Weddings]</span></h1>
+    <p id="company" className="text-red-600 font-sans lg:hidden block">[Penny House Weddings]</p>
+    <h1 className={heading}><span>PENNY</span><span>HOUSE</span><span className="font-sans lg:text-5xl text-red-600">[Weddings]</span></h1>
     <Videos />
-    <Link to="#company" id="fab" activeClassName="active" className={fab}>^</Link>
+    <a href="#company" partialActive={true} id="fab" activeClassName="active" className={fab}>^</a>
   </Layout>
 )
 

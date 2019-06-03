@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -15,10 +8,10 @@ import styled from 'styled-components'
 
 import Header, { Socials } from "./header"
 
-import weddingWebp from '../images/wedding-bg.webp';
-import receptionWebp from '../images/reception-bg.webp';
-import weddingJpg from '../images/wedding-bg.jpg';
-import receptionJpg from '../images/reception-bg.jpg';
+import weddingWebp from '../assets/photos/wedding-bg.webp';
+import receptionWebp from '../assets/photos/reception-bg.webp';
+import weddingJpg from '../assets/photos/wedding-bg.jpg';
+import receptionJpg from '../assets/photos/reception-bg.jpg';
 
 
 const Background = styled.div`

@@ -3,10 +3,10 @@ import { Link } from "gatsby"
 
 import styled from 'styled-components'
 
-import Hamburger from '../images/hamburger.inline.svg'
-import Instagram from '../images/instagram.inline.svg'
-import Vimeo from "../images/vimeo.inline.svg"
-import Facebook from '../images/facebook.inline.svg'
+import Hamburger from '../assets/svg/hamburger.inline.svg'
+import Instagram from '../assets/svg/instagram.inline.svg'
+import Vimeo from "../assets/svg/vimeo.inline.svg"
+import Facebook from '../assets/svg/facebook.inline.svg'
 
 const Wrapper = styled.div`
   @media (min-width: 1024px) {
@@ -79,7 +79,7 @@ const Header = (props) => {
   return(
     <nav className="fixed lg:relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span className="text-red-600 font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[Penny House Weddings]</span>
+        <span id="company" className="text-red-600 font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[Penny House Weddings]</span>
         <Links open={open} className={links}>
           <div className="">
             <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>

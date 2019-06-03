@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/images/`,
+        path: `${__dirname}/src/assets/`,
       },
     },
     'gatsby-plugin-postcss',
@@ -28,7 +28,7 @@ module.exports = {
         background_color: `#000000`,
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-styled-components',
@@ -39,8 +39,7 @@ module.exports = {
           families: ['Cinzel']
         },
         custom: {
-          families: ['PeachesandCreamRegularW00'],
-          urls: ['//db.onlinewebfonts.com/c/ca42b7ce0d708ee0817789585c449739?family=PeachesandCreamRegularW00']
+          families: ['Peaches and Cream']
         }
       }
     },

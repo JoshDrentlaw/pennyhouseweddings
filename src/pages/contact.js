@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 import styled from 'styled-components'
 
-import Calendar from '../images/calendar.inline.svg'
+import Calendar from '../assets/svg/calendar.inline.svg'
 
 const Group = ({ children }) => (
     <section className="relative w-full flex flex-col justify-between lg:mb-6 lg:flex-row">{children}</section>
