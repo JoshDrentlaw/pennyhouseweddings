@@ -77,7 +77,7 @@ const Layout = ({ children }) => {
   return(
     <Background url={url} safari={safari}>
       <div className="relative">
-        <div id="top" />
+        <div id="top"></div>
         <Header />
         <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
         <Footer />

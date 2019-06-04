@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -14,7 +15,7 @@ const IndexPage = () => (
     <p className="text-red-600 font-sans lg:hidden block">[Penny House Weddings]</p>
     <h1 className={heading}><span>PENNY</span><span>HOUSE</span><span className="font-sans lg:text-5xl text-red-600">[Weddings]</span></h1>
     <Videos />
-    <a href="#top" className={fab}>^</a>
+    <Link to="#top" className={fab}>^</Link>
   </Layout>
 )
 

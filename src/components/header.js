@@ -56,13 +56,13 @@ const HamburgerButton = (props) => {
 export const Socials = () => (
   <div className="pl-px2 w-1/2">
     <a href="https://www.instagram.com/pennyhouseweddings/" className="text-white mr-4 inline">
-      <Instagram className="fill-current w-4 h-4 m-0" />
+      <Instagram className="fill-current w-4 h-4 inline" />
     </a>
     <a href="https://vimeo.com/pennyhouseweddings" className="text-white mr-4 inline">
-      <Vimeo className="fill-current w-4 h-4 m-0" />
+      <Vimeo className="fill-current w-4 h-4 inline" />
     </a>
     <a href="https://www.facebook.com/pennyhouseweddings/?ref=py_c" className="text-white inline">
-      <Facebook className="fill-current w-4 h-4 m-0" />
+      <Facebook className="fill-current w-4 h-4 inline" />
     </a>
   </div>
 )
