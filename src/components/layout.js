@@ -10,13 +10,8 @@ import Header, { Socials } from "./header"
 
 
 const Background = styled(Img)`
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  filter: brightness(70%);
-
-  @media (max-width: 1024px) {
-    background-size: auto 100vh;
+  & > img {
+    filter: brightness(70%);
   }
 `
 
@@ -83,7 +78,9 @@ const Layout = ({ children }) => {
       <Header />
       <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
       <Footer />
-      <Background fixed={pic} />
+      <div className="fixed top-0 left-0 w-screen h-screen z-neg">
+        <Background fluid={pic} />
+      </div>
     </div>
   )
 }

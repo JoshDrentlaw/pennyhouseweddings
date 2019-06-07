@@ -368,6 +368,7 @@ module.exports = {
       none: 'none',
     },
     zIndex: {
+      neg: '-10',
       auto: 'auto',
       '0': '0',
       '10': '10',
