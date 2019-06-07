@@ -1,38 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-import is from 'is_js'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 import '../global.css'
 import styled from 'styled-components'
 
 import Header, { Socials } from "./header"
 
-import weddingWebp from '../assets/photos/wedding-bg.webp';
-import receptionWebp from '../assets/photos/reception-bg.webp';
-import weddingJpg from '../assets/photos/wedding-bg.jpg';
-import receptionJpg from '../assets/photos/reception-bg.jpg';
 
+const Background = styled(Img)`
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  filter: brightness(70%);
 
-const Background = styled.div`
-  position: relative;
-
-  ::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: whitesmoke;
-    background-image: url(${props => props.url});
-    background-repeat: no-repeat;
-    ${props => props.safari ? null : `background-attachment: fixed;`}
-    background-position: center top;
-    background-size: 100% 100vh;
-    filter: brightness(70%);
-
-    @media (max-width: 1024px) {
-      background-size: auto 100vh;
-    }
+  @media (max-width: 1024px) {
+    background-size: auto 100vh;
   }
 `
 
@@ -57,32 +41,50 @@ const Footer = () => (
 
 const Layout = ({ children }) => {
   const isClient = typeof window !== 'undefined';
-  const safari = is.safari();
-  let url = (safari) ? weddingJpg : weddingWebp;
+
+  let pic;
+
+  const data = useStaticQuery(graphql`
+    query {
+      wedding: file(relativePath: { eq: "photos/wedding-bg.jpg"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      reception: file(relativePath: { eq: "photos/reception-bg.jpg"}) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   
   if (isClient) {
     switch (window.location.pathname) {
       case '/':
-        url = (safari) ? weddingJpg : weddingWebp;
+        pic = data.wedding.childImageSharp.fluid;
         break;
       case '/contact/':
-          url = (safari) ? receptionJpg : receptionWebp;
-          break;
+        pic = data.reception.childImageSharp.fluid;
+        break;
       default:
-        url = weddingJpg;
+        pic = data.wedding.childImageSharp.fluid;
         break;
     }
   }
 
   return(
-    <Background url={url} safari={safari}>
-      <div className="relative">
-        <div id="top"></div>
-        <Header />
-        <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
-        <Footer />
-      </div>
-    </Background>
+    <div className="relative">
+      <div id="top"></div>
+      <Header />
+      <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
+      <Footer />
+      <Background fixed={pic} />
+    </div>
   )
 }
 
