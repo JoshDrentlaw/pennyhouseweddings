@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
 import '../global.css'
 import styled from 'styled-components'
@@ -9,8 +9,17 @@ import styled from 'styled-components'
 import Header, { Socials } from "./header"
 
 
-const Background = styled(Img)`
-  & > img {
+const Background = styled(BackgroundImage)`
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  overflow: hidden;
+
+  :before {
+    position: fixed;
+    width: 100%; height: 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
     filter: brightness(70%);
   }
 `
@@ -43,15 +52,15 @@ const Layout = ({ children }) => {
     query {
       wedding: file(relativePath: { eq: "photos/wedding-bg.jpg"}) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       reception: file(relativePath: { eq: "photos/reception-bg.jpg"}) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -73,15 +82,13 @@ const Layout = ({ children }) => {
   }
 
   return(
-    <div className="relative">
-      <div id="top"></div>
-      <Header />
-      <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
-      <Footer />
-      <div className="fixed top-0 left-0 w-screen h-screen z-neg">
-        <Background fluid={pic} />
+      <div className="relative">
+        <Background fluid={pic} Tag="div" style={{ position: 'fixed' }} />
+        <div id="top"></div>
+        <Header />
+        <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
+        <Footer />
       </div>
-    </div>
   )
 }
 
