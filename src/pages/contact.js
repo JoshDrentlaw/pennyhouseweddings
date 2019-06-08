@@ -59,6 +59,7 @@ const ContactPage = () => (
         <h1 className="mt-6 text-white text-center text-5xl lg:text-7xl">Contact</h1>
         <form name="contact" method="post" className="w-full md:w-1/2 lg:w-3/4 xl:w-3/5 mx-auto mb-6" netlify-honeypot="bot-field" netlify secure>
             <input type="hidden" name="bot-field" />
+            <input type="hidden" name="contact" value="contact" />
             <Group>
                 <FormInput
                     name="First Name"
