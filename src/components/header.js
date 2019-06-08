@@ -54,7 +54,7 @@ const HamburgerButton = (props) => {
 }
 
 export const Socials = () => (
-  <div className="pl-px2 w-1/2">
+  <div className="pl-px2 text-right">
     <a href="https://www.instagram.com/pennyhouseweddings/" className="text-white mr-4 inline">
       <Instagram className="fill-current w-4 h-4 inline" />
     </a>
@@ -70,7 +70,7 @@ export const Socials = () => (
 const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg:w-1/2';
 
 const links =
-  `text-white flex flex-col justify-start items-start bg-transblack z-10
+  `text-white flex flex-col justify-start items-start bg-transblack w-1/2 z-10
   lg:bg-transparent lg:flex-row lg:justify-between lg:items-center lg:visible`;
 
 const Header = (props) => {

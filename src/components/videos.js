@@ -4,13 +4,12 @@ import ReactHtmlParser from 'react-html-parser'
 
 import styled from 'styled-components'
 
-const VideoItem = styled.li`
+const VideoItem = styled.div`
     width: calc(100% - 1rem);
     height: 0;
     padding-top: 56.25%;
     margin: 0.5rem auto 0.5rem;
     position: relative;
-    overflow: hidden;
 
     iframe {
         position: absolute;
@@ -45,9 +44,9 @@ const Videos = () => {
     })
 
     return (
-        <ul>
+        <div className="flex flex-col justify-between items-center">
             {videoList}
-        </ul>
+        </div>
     )
 }
 

@@ -7,7 +7,7 @@ module.exports = {
       transparent: 'transparent',
 
       black: '#101010',
-      transblack: 'rgba(16,16,16,0.6)',
+      transblack: 'rgba(16,16,16,0.8)',
       lightgrey: '#cacaca',
       white: '#fff',
 
@@ -200,6 +200,14 @@ module.exports = {
       '10xl': '8rem',
       '12xl': '9rem',
       '13xl': '10rem',
+      '1/16': '0.0625em',
+      '1/8': '0.125em',
+      '1/4': '0.25em',
+      '1/3': '0.3333em',
+      '1/2': '0.5em',
+      '2/3': '0.66666em',
+      '3/4': '0.75em',
+      full: '1em',
     },
     fontWeight: {
       hairline: '100',
