@@ -20,14 +20,14 @@ const VideoItem = styled.div`
 
 const Videos = () => {
     const query = useStaticQuery(graphql`
-    {
-        allVimeoVideo {
-            nodes {
-                id
-                iframe
+        {
+            allVimeoVideo(filter: { title: { regex: "/Wedding/" }}) {
+                nodes {
+                    id
+                    iframe
+                }
             }
         }
-    }
     `);
 
     const videoList = query.allVimeoVideo.nodes.map(({ id, iframe }) => {
