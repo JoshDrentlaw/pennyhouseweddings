@@ -1,6 +1,6 @@
 ---
-title: "Example"
-author: "Adam King"
+title: Example
+author: Adam King
 ---
 # Big Header
 
@@ -12,7 +12,9 @@ author: "Adam King"
 
 This is basic paragraph text. Blah blah blah.
 
-Another paragraph[^1]
+Another paragraph\[^1]
+
+![Red Dragon sitting on a ledge.](/static/assets/dragon_red.png "Acerantix waits.")
 
 * You're dumb
 * And lame
@@ -22,12 +24,11 @@ Another paragraph[^1]
 2. You're cool
 3. I'm lame
 
-
-*It's so crazy*
+_It's so crazy_
 
 **What people do**
 
-**And *how* they do it**
+**And _how_ they do it**
 
 ~~But it doesn't bother me~~
 
@@ -38,7 +39,7 @@ Stupid
 : The concept of being Josh.
 
 | Person | G.O.A.T. |
-|--------|----------|
+| ------ | -------- |
 | Bush   | No       |
 | Adam   | Yes      |
 | Josh   | Yes      |
@@ -49,11 +50,11 @@ Hello from under the table!
 
 Visit [Penny House Weddings](https://pennyhouseweddings.com)!
 
-> "*It's the best!*"
+> "_It's the best!_"
 
-- [x] Get the snitch
-- [x] Grab the strap
-- [x] Don't give a fuck
-- [ ] Brat! brat! brat!
+* Get the snitch
+* Grab the strap
+* Don't give a fuck
+* Brat! brat! brat!
 
-[^1]: Paragraphs were invented by your mom in 1722. Look it up.
+\[^1]: Paragraphs were invented by your mom in 1722. Look it up.
