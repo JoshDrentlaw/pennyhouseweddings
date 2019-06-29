@@ -14,7 +14,7 @@ This is basic paragraph text. Blah blah blah.
 
 Another paragraph\[^1]
 
-![Red Dragon sitting on a ledge.](/static/assets/dragon_red.png "Acerantix waits.")
+![Red Dragon sitting on a ledge.](/assets/blog/dragon_red.png "Acerantix waits.")
 
 * You're dumb
 * And lame
