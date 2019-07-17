@@ -7,9 +7,11 @@ module.exports = {
     title: `Penny House Weddings`,
     description: `Get quality video of your wedding at a great price.`,
     author: `Josh Drentlaw`,
+    siteUrl: `https://www.pennyhouseweddings.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
