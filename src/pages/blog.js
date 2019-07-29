@@ -29,7 +29,7 @@ const Blog = () => {
 
     return (
         <Layout>
-            <SEO title="Blog | Penny House Weddings" description="Get to know Adam King, the man behind Penny House Weddings. Here he shares his favorite memories from the most beautiful weddings and amazing clients." />
+            <SEO title="Blog" description="Get to know Adam King, the man behind Penny House Weddings. Here he shares his favorite memories from the most beautiful weddings and amazing clients." />
             <div style={{ color: `white`, backgroundColor: `rgba(112, 128, 144, 0.8)`, borderRadius: `10px`, padding: `1em` }}>
                 <h1 style={{ fontSize: `2em`, marginBottom: `1em` }}>Penny House Wedding Blog<small style={{ margin: `1em 0`, fontSize: `0.5em` }}> - {posts.totalCount} Posts</small></h1>
                 
