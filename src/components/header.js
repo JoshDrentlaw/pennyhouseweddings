@@ -3,28 +3,67 @@ import { Link } from "gatsby"
 
 import styled from 'styled-components'
 
-import Hamburger from '../assets/svg/hamburger.inline.svg'
 import Instagram from '../assets/svg/instagram.inline.svg'
-import Vimeo from "../assets/svg/vimeo.inline.svg"
+import Vimeo from '../assets/svg/vimeo.inline.svg'
 import Facebook from '../assets/svg/facebook.inline.svg'
+import Menu from '../assets/svg/menu.inline.svg'
+
+const Nav = styled.nav`
+  width: 100%;
+  z-index: 50;
+
+  @media(min-width: 1024px) {
+    position: relative;
+  }
+`
 
 const Wrapper = styled.div`
+  background-color: rgba(0,0,0,0);
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 40% 60%;
     grid-template-areas: 'brand links';
+    width: 50%;
   }
 `
+
+const Company = styled.span`
+  font-family: 'Cinzel';
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 0 1rem;
+  grid-area: brand;
+`
+//className="font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline"
 
 const Links = styled.div.attrs(({ open }) => ({
   visibility: open ? 'visible' : 'hidden',
   transform: open ? `translateX(0%)` : `translateX(100%)`,
 }))`
+  background-color: white;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   grid-area: links;
   position: relative;
+  visibility: visible;
+  width: 50%;
+  z-index: 10;
 
   /* Medium devices (tablets, less than 992px) */
   @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-size: 1.5rem;
     width: 40vw; height: 100vh;
     padding: 1rem;
@@ -37,7 +76,18 @@ const Links = styled.div.attrs(({ open }) => ({
   }
 `
 
-const hamburger = "flex items-center px-3 py-2 text-black bg-white rounded border border-black";
+const Hamburgerbutton = styled.button`
+  display: flex;
+  align-items: center;
+  color: black;
+  background-color: white;
+  width: 3rem;
+  height: 2rem;
+
+  svg {
+    margin: auto;
+  }
+`
 
 const HamburgerButton = (props) => {
   const toggle = () => {
@@ -46,9 +96,9 @@ const HamburgerButton = (props) => {
 
   return (
     <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
-      <button className={hamburger} onClick={toggle}>
-        <Hamburger className="fill-current h-3 w-3" />
-      </button>
+      <Hamburgerbutton onClick={toggle}>
+        <Menu className="fill-current inline" />
+      </Hamburgerbutton>
     </div>
   )
 }
@@ -67,20 +117,14 @@ export const Socials = () => (
   </div>
 )
 
-const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg:w-1/2';
-
-const links =
-  `text-white flex flex-col justify-start items-start bg-transblack w-1/2 z-10
-  lg:bg-transparent lg:flex-row lg:justify-between lg:items-center lg:visible`;
-
 const Header = (props) => {
   const [open, setOpen] = useState(false);
 
   return(
-    <nav className="fixed lg:relative w-full z-50">
-      <Wrapper className={wrapper}>
-        <span className="text-red-600 font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>[Penny House Weddings]</span>
-        <Links open={open} className={links}>
+    <Nav>
+      <Wrapper>
+        <Company>[PENNY HOUSE WEDDINGS]</Company>
+        <Links open={open}>
           <div className="">
             <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>
             <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
@@ -89,7 +133,7 @@ const Header = (props) => {
         </Links>
         <HamburgerButton toggle={setOpen} state={open} />
       </Wrapper>
-    </nav>
+    </Nav>
   )
 }
 

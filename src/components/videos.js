@@ -4,11 +4,16 @@ import ReactHtmlParser from 'react-html-parser'
 
 import styled from 'styled-components'
 
+const VideoContainer = styled.div`
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+`
+
 const VideoItem = styled.div`
     width: calc(100% - 1rem);
     height: 0;
     padding-top: 56.25%;
-    margin: 0.5rem auto 0.5rem;
+    margin: 1rem auto;
     position: relative;
 
     iframe {
@@ -21,32 +26,20 @@ const VideoItem = styled.div`
 const Videos = () => {
     const query = useStaticQuery(graphql`
         {
-            allVimeoVideo(filter: { title: { regex: "/Wedding/" }}) {
-                nodes {
-                    id
-                    iframe
-                }
+            vimeoVideo {
+                iframe
             }
         }
     `);
 
-    const videoList = query.allVimeoVideo.nodes.map(({ id, iframe }) => {
-        return (
-            <VideoItem key={id}>
-                {ReactHtmlParser(iframe, {
-                    transform(node) {
-                        node.attribs.width = 'auto';
-                        node.attribs.height = 'auto';
-                    }
-                })}
-            </VideoItem>
-        )
-    })
+    const iframe = query.vimeoVideo.iframe;
 
     return (
-        <div className="flex flex-col justify-between items-center">
-            {videoList}
-        </div>
+        <VideoContainer className="flex flex-col justify-between items-center">
+            <VideoItem>
+                {ReactHtmlParser(iframe)}
+            </VideoItem>
+        </VideoContainer>
     )
 }
 

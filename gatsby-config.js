@@ -46,7 +46,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Cinzel']
+          families: ['Cinzel', 'Dancing Script', 'Raleway', 'Raleway:italic']
         },
         custom: {
           families: ['Peaches and Cream']
