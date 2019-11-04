@@ -80,8 +80,6 @@ const SLink = styled(Link)`
   text-align: center;
 `
 
-const fab = "rounded-full border border-black bg-white text-black hover:text-black text-4xl font-bold fixed bottom-1/10 right-1/10 w-12 h-12 flex justify-center items-center"
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -97,7 +95,6 @@ const IndexPage = () => (
       <SLink to="/">Gallery</SLink>
       <SLink to="/contact">Contact</SLink>
     </Links>
-    <a href="#top" className={fab}>^</a>
   </Layout>
 )
 

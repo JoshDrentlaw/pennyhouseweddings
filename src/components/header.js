@@ -3,9 +3,6 @@ import { Link } from "gatsby"
 
 import styled from 'styled-components'
 
-import Instagram from '../assets/svg/instagram.inline.svg'
-import Vimeo from '../assets/svg/vimeo.inline.svg'
-import Facebook from '../assets/svg/facebook.inline.svg'
 import Menu from '../assets/svg/menu.inline.svg'
 
 const Nav = styled.nav`
@@ -92,30 +89,28 @@ const Hamburgerbutton = styled.button`
 const HamburgerButton = (props) => {
   const toggle = () => {
     props.toggle(!props.state)
+    let btn = document.querySelector('#hamburger')
+    btn.classList.toggle('is-active')
   }
 
   return (
+    <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
+      <button id="hamburger" class="hamburger hamburger--slider" type="button" onClick={toggle}>
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+  )
+
+  /* return (
     <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
       <Hamburgerbutton onClick={toggle}>
         <Menu className="fill-current inline" />
       </Hamburgerbutton>
     </div>
-  )
+  ) */
 }
-
-export const Socials = () => (
-  <div className="pl-px2 text-right">
-    <a href="https://www.instagram.com/pennyhouseweddings/" className="text-white mr-4 inline">
-      <Instagram className="fill-current w-4 h-4 inline" />
-    </a>
-    <a href="https://vimeo.com/pennyhouseweddings" className="text-white mr-4 inline">
-      <Vimeo className="fill-current w-4 h-4 inline" />
-    </a>
-    <a href="https://www.facebook.com/pennyhouseweddings/?ref=py_c" className="text-white inline">
-      <Facebook className="fill-current w-4 h-4 inline" />
-    </a>
-  </div>
-)
 
 const Header = (props) => {
   const [open, setOpen] = useState(false);
@@ -129,7 +124,6 @@ const Header = (props) => {
             <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>
             <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
           </div>
-          <Socials />
         </Links>
         <HamburgerButton toggle={setOpen} state={open} />
       </Wrapper>
