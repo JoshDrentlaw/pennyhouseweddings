@@ -1,16 +1,12 @@
 import React, { useState } from "react"
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SEO from "../components/seo"
 
 import Layout, { isClient } from '../components/layout'
-import { H1 } from './index'
+import { H1, SLink } from './index'
 
 import styled from 'styled-components'
-
-const HH1 = styled(H1)`
-    margin-top: 2rem;
-`
 
 const H2 = styled.h2`
     font-family: 'Cinzel';
@@ -21,7 +17,11 @@ const H2 = styled.h2`
     text-align: center;
 `
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
 const Image = styled(Img)`
     margin: 0 -1rem;
@@ -59,18 +59,17 @@ const AboutPage = () => {
         }
     `)
 
-    console.log(data[size])
-
     return (
         <Layout>
             <SEO title="About" />
             <H2>WHO?</H2>
+            <Image fluid={data[size].childImageSharp.fluid} alt="Wedding reception" />
             <Wrapper>
-                <Image fluid={data[size].childImageSharp.fluid} alt="Wedding reception" />
-                <HH1><span id="top">PENNY HOUSE</span><span id="bottom">WEDDINGS</span></HH1>
+                <H1 marginTop="2rem"><span id="top">PENNY HOUSE</span><span id="bottom">WEDDINGS</span></H1>
                 <P>Penny House Weddings was founded with the desire to bring an elegant touch to the world of wedding videography, with a true commitment to the craft. We love what we do, and take great pride in telling your story.</P>
                 <P>Every wedding is unique, and so is your story. We believe that your wedding video should be about <span className="italic">you</span>.</P>
                 <P>We base our wedding videography in California, with options available for travel and destination weddings. If you're looking for a wedding videographer in California or beyond, drop us a line! We'd love to get to know you.</P>
+                <SLink to="/contact/">let's chat!</SLink>
             </Wrapper>
         </Layout>
     )

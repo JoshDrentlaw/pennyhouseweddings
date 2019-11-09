@@ -8,10 +8,11 @@ import SEO from "../components/seo"
 import Videos from "../components/videos"
 
 export const H1 = styled.h1`
+  font-size: ${props => props.fontSize ? props.fontSize : 'initial'};
   font-family: 'Cinzel';
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 0;
+  margin-top: ${props => props.marginTop ? props.marginTop : '1rem'};
+  margin-bottom: ${props => props.marginBottom ? props.marginBottom : '0'};
 
   #top {
     display: block;
@@ -74,9 +75,10 @@ const Links = styled.div`
 export const SLink = styled(Link)`
   background-color: #ff6161;
   color: white;
+  display: block;
   font-family: 'Cinzel';
   padding: 0.5rem 0;
-  width: 150px;
+  width: ${props => props.width ? props.width : '150px'};
   text-align: center;
 `
 

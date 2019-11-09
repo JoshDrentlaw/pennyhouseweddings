@@ -27,6 +27,10 @@ a:hover {
     transition: color 200ms ease-in-out;
 }
 
+#youtube {
+    color: red;
+}
+
 /* HAMBURGER ANIMATION */
 .hamburger {
     padding: 15px 0;

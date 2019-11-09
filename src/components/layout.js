@@ -59,7 +59,7 @@ const Socials = () => (
     <a href="https://www.facebook.com/pennyhouseweddings/?ref=py_c">
       <Facebook />
     </a>
-    <a href="/">
+    <a id="youtube" href="/">
       <Youtube />
     </a>
     <a href="https://www.linkedin.com/in/adam-king-249994190/">

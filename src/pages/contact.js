@@ -7,6 +7,8 @@ import styled from 'styled-components'
 
 import Calendar from '../assets/svg/calendar.inline.svg'
 
+import { H1 } from './index'
+
 const Group = ({ children }) => (
     <section className="relative w-full flex flex-col justify-between lg:mb-6 lg:flex-row">{children}</section>
 )
@@ -48,15 +50,12 @@ const FormInput = (props) => {
         </InputWrapper>
     )
 }
-
-const select = "border border-black p-4 w-full mb-4 lg:mb-0";
 const textarea = "border border-black mb-6 p-4 w-full"
 
 const ContactPage = () => (
     <Layout>
         <SEO title="Contact" />
-        <p className="text-red-600 font-sans lg:hidden block">[Penny House Weddings]</p>
-        <h1 className="mt-6 text-white text-center text-5xl lg:text-7xl">Contact</h1>
+        <H1 fontSize="25px" marginTop="0.5rem" marginBottom="1rem">Contact</H1>
         <form name="contact" method="post" className="w-full md:w-1/2 lg:w-3/4 xl:w-3/5 mx-auto mb-6" netlify-honeypot="bot-field" data-netlify="true" data-secure="true">
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="contact" />
@@ -88,40 +87,7 @@ const ContactPage = () => (
                     data-secure-field
                 />
             </Group>
-            <Group>
-                <FormInput
-                    name="Date"
-                    type="date"
-                    placeholder="Date"
-                />
-                <InputWrapper>
-                    <select name="Guest expectancy" className={select} required>
-                        <option value="" disable="true" style={{ display: 'none' }}>Guest Expectancy</option>
-                        <option value="10-100">10-100</option>
-                        <option value="100-200">100-200</option>
-                        <option value="200-300">200-300</option>
-                        <option value="300+">300+</option>
-                    </select>
-                </InputWrapper>
-            </Group>
-            <Group>
-                <FormInput
-                    name="Estimated time frame"
-                    type="text"
-                    placeholder="Estimated Time Frame"
-                />
-                <InputWrapper>
-                    <select name="Number of Locations" className={select} required>
-                        <option value="" disable="true" style={{ display: 'none' }}>How many locations</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </InputWrapper>
-            </Group>
             <textarea className={textarea} rows="5" name="What are you looking for?" placeholder="Tell us about the big day! What are you looking for in a video service?"></textarea>
-            <textarea className={textarea} rows="1" name="How did you hear about us?" placeholder="How did you hear about us?"></textarea>
             <button type="submit" className="block ml-auto bg-black border border-black text-white px-12 py-4">Submit</button>
         </form>
     </Layout>
