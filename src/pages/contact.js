@@ -95,13 +95,13 @@ const ContactPage = () => (
                     placeholder="Date"
                 />
                 <InputWrapper>
-                <select name="Guest expectancy" className={select} required>
-                    <option value="" disable style={{ display: 'none' }}>Guest Expectancy</option>
-                    <option value="10-100">10-100</option>
-                    <option value="100-200">100-200</option>
-                    <option value="200-300">200-300</option>
-                    <option value="300+">300+</option>
-                </select>
+                    <select name="Guest expectancy" className={select} required>
+                        <option value="" disable="true" style={{ display: 'none' }}>Guest Expectancy</option>
+                        <option value="10-100">10-100</option>
+                        <option value="100-200">100-200</option>
+                        <option value="200-300">200-300</option>
+                        <option value="300+">300+</option>
+                    </select>
                 </InputWrapper>
             </Group>
             <Group>
@@ -112,7 +112,7 @@ const ContactPage = () => (
                 />
                 <InputWrapper>
                     <select name="Number of Locations" className={select} required>
-                        <option value="" disable style={{ display: 'none' }}>How many locations</option>
+                        <option value="" disable="true" style={{ display: 'none' }}>How many locations</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

@@ -62,14 +62,37 @@ const Links = styled.div.attrs(({ open }) => ({
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 1.5rem;
-    width: 40vw; height: 100vh;
-    padding: 1rem;
-    padding-top: 4rem;
+    width: 80vw; height: 100vh;
+    padding-left: 2.5rem;
+    padding-top: 7rem;
     position: absolute;
     visibility: ${props => props.visibility};
     top: 0; right: 0;
     transform: ${props => props.transform};
     transition: all 200ms ease-in;
+    box-shadow: 0px 0px 40px 0px black;
+  }
+`
+
+const Shadow = styled.div`
+  visibility: ${props => props.open ? 'visible' : 'hidden'};
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+  z-index: 9;
+  transform: translateX(-50px);
+`
+
+const SLink = styled(Link)`
+  color: black;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+
+  @media(min-width: 1024px) {
+    display: inline;
+    padding-right: 0.5rem;
   }
 `
 
@@ -86,46 +109,32 @@ const Hamburgerbutton = styled.button`
   }
 `
 
-const HamburgerButton = (props) => {
-  const toggle = () => {
-    props.toggle(!props.state)
-    let btn = document.querySelector('#hamburger')
-    btn.classList.toggle('is-active')
-  }
-
-  return (
-    <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
-      <button id="hamburger" class="hamburger hamburger--slider" type="button" onClick={toggle}>
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </div>
-  )
-
-  /* return (
-    <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
-      <Hamburgerbutton onClick={toggle}>
-        <Menu className="fill-current inline" />
-      </Hamburgerbutton>
-    </div>
-  ) */
-}
+const HamburgerButton = (props) => (
+  <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
+    <button id="hamburger" className={`hamburger hamburger--slider ${props.state ? 'is-active' : null}`} type="button" onClick={() => props.toggle(!props.state)}>
+      <span className="hamburger-box">
+        <span className="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+)
 
 const Header = (props) => {
-  const [open, setOpen] = useState(false);
 
   return(
     <Nav>
       <Wrapper>
         <Company>[PENNY HOUSE WEDDINGS]</Company>
-        <Links open={open}>
-          <div className="">
-            <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>
-            <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
+        <Links id="links" open={props.open}>
+          <div>
+            <SLink activeClassName="active" to='/'>home</SLink>
+            <SLink activeClassName="active" to='/gallery/'>gallery</SLink>
+            <SLink activeClassName="active" to='/about/'>about</SLink>
+            <SLink activeClassName="active" to='/contact/'>contact</SLink>
           </div>
         </Links>
-        <HamburgerButton toggle={setOpen} state={open} />
+        <Shadow open={props.open}></Shadow>
+        <HamburgerButton toggle={props.setOpen} state={props.open} />
       </Wrapper>
     </Nav>
   )

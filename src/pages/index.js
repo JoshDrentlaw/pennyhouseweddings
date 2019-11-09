@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Videos from "../components/videos"
 
-const H1 = styled.h1`
+export const H1 = styled.h1`
   font-family: 'Cinzel';
   text-align: center;
   margin-top: 1rem;
@@ -71,7 +71,7 @@ const Links = styled.div`
   height: calc(95px + 2rem);
 `
 
-const SLink = styled(Link)`
+export const SLink = styled(Link)`
   background-color: #ff6161;
   color: white;
   font-family: 'Cinzel';

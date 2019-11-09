@@ -21,13 +21,6 @@ module.exports = {
         path: `${__dirname}/src/assets/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: 'blog',
-        path: `${__dirname}/src/pages/blog/`,
-      },
-    },
     'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-manifest`,
