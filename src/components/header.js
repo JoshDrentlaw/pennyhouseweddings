@@ -87,7 +87,7 @@ const Shadow = styled.div`
 const SLink = styled(Link)`
   color: black;
   display: block;
-  font-size: 18px;
+  font-size: 25px;
   margin-bottom: 1.5rem;
 
   @media(min-width: 1024px) {
