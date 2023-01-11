@@ -27,7 +27,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.0.36",
     "gatsby-source-vimeo": "^1.1.8",
-    "gatsby-transformer-remark": "^2.5.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.1.19",
     "immutable": "^3.8.2",
     "intersection-observer": "^0.7.0",
